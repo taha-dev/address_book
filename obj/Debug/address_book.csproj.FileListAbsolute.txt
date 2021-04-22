@@ -1,0 +1,10 @@
+C:\Users\W4R10CK\source\repos\address_book\bin\Debug\address_book.exe.config
+C:\Users\W4R10CK\source\repos\address_book\bin\Debug\address_book.exe
+C:\Users\W4R10CK\source\repos\address_book\bin\Debug\address_book.pdb
+C:\Users\W4R10CK\source\repos\address_book\obj\Debug\address_book.csprojAssemblyReference.cache
+C:\Users\W4R10CK\source\repos\address_book\obj\Debug\address_book.Form1.resources
+C:\Users\W4R10CK\source\repos\address_book\obj\Debug\address_book.Properties.Resources.resources
+C:\Users\W4R10CK\source\repos\address_book\obj\Debug\address_book.csproj.GenerateResource.cache
+C:\Users\W4R10CK\source\repos\address_book\obj\Debug\address_book.csproj.CoreCompileInputs.cache
+C:\Users\W4R10CK\source\repos\address_book\obj\Debug\address_book.exe
+C:\Users\W4R10CK\source\repos\address_book\obj\Debug\address_book.pdb
