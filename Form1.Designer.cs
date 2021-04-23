@@ -29,6 +29,7 @@ namespace address_book
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label13 = new System.Windows.Forms.Label();
@@ -66,10 +67,12 @@ namespace address_book
             this.label18 = new System.Windows.Forms.Label();
             this.txt_sal = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.rchtxt_out = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -466,6 +469,7 @@ namespace address_book
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.rchtxt_out);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -474,6 +478,15 @@ namespace address_book
             this.tabPage4.Text = "Display";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // rchtxt_out
+            // 
+            this.rchtxt_out.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rchtxt_out.Location = new System.Drawing.Point(3, 3);
+            this.rchtxt_out.Name = "rchtxt_out";
+            this.rchtxt_out.Size = new System.Drawing.Size(786, 418);
+            this.rchtxt_out.TabIndex = 0;
+            this.rchtxt_out.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -481,6 +494,7 @@ namespace address_book
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Address Book";
             this.tabControl1.ResumeLayout(false);
@@ -490,6 +504,7 @@ namespace address_book
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -533,6 +548,7 @@ namespace address_book
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.RichTextBox rchtxt_out;
     }
 }
 

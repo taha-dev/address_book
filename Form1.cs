@@ -18,6 +18,8 @@ namespace address_book
         Personal_info personal_Info;
         Academic_info academic_Info;
         Professional_info professional_Info;
+        StreamWriter sw;
+        StreamReader sr;
         public Form1()
         {
             InitializeComponent();
@@ -55,26 +57,43 @@ namespace address_book
         {
             personal_Info = new Personal_info(txt_fname.Text, txt_lname.Text, txt_email.Text, txt_city.Text, txt_address.Text, txt_country.Text);
             academic_Info = new Academic_info(Convert.ToDecimal(txt_cgpa.Text), txt_uni.Text, txt_degree.Text, txt_program.Text);
-            professional_Info = new Professional_info(Int16.Parse(txt_sal.Text), txt_com.Text, txt_work_exp.Text, txt_desig.Text);
+            professional_Info = new Professional_info(Int32.Parse(txt_sal.Text), txt_com.Text, txt_work_exp.Text, txt_desig.Text);
             user = new User(personal_Info, academic_Info, professional_Info);
             users.Add(user);
         }
         private void write_data()
         {
-            StreamWriter sw = new StreamWriter("address.txt");
+            sw = new StreamWriter("address.txt");
+            int i = 1;
             foreach(User us in users)
             {
+                sw.WriteLine(string.Format("---- User {0} ----\n",i));
                 sw.WriteLine(us.Print_user());
-                sw.WriteLine(sw.NewLine);
+                i++;
             }
             sw.Close();
         }
         private string read_data()
         {
-            StreamReader sr = new StreamReader("address.txt");
+            sr = new StreamReader("address.txt");
             string rec = sr.ReadToEnd();
             sr.Close();
             return rec;
+        }
+        private void ClearAll()
+        {
+            foreach(TabPage i in tabControl1.TabPages)
+            {
+                foreach (Control control in i.Controls)
+                {
+                    if (!(control is Label || control is Button || control is RichTextBox))
+                    {
+                        control.ResetText();
+                    }
+
+                }
+            }
+            
         }
         private void btn_submit_Click(object sender, EventArgs e)
         {
@@ -82,6 +101,14 @@ namespace address_book
             {
                 insrt_data();
                 write_data();
+                ClearAll();
+                rchtxt_out.Text = read_data();
+                MessageBox.Show("Data scucessfully Inserted!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tabControl1.SelectedTab = tabPage4;
+            }
+            else
+            {
+                MessageBox.Show("Please Fill All the Fields!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
